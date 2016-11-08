@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="noindex" />
+<META NAME="GOOGLEBOT" CONTENT="NOINDEX" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<script type="text/javascript" src="//webphim24h.rf.gd/jwplayer/jwplayer.flash.swf"></script>
+<script type="text/javascript" src="//webphim24h.rf.gd/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key = "kHUrNdIGPOv+4l6EjGSDZ+5UePwtmAf05yNvBA==";</script>
+</head>
+<body>
+<div id="container" class="container"></div>
+<script type="text/javascript">
+var playerInstance = jwplayer("container");
+playerInstance.setup({
+width: "100%",
+height: "100%",
+controls: true,
+displaytitle: false,
+//flashplayer: "//webphim24h.rf.gd/jwplayer/jwplayer.flash.swf",
+aspectratio: "16:9",
+fullscreen: "true",
+//primary: 'html5',
+provider: 'http',
+autostart: false,
+abouttext: "Webphim24h Movie Player",
+aboutlink: "http://webphim24h.rf.gd/",
+image:'',
+sources: [{file:"https://lh3.googleusercontent.com/2r6pa0DPRIoIiMFwmCqUFGUUcY07xLZIP33Gm_npGYDRIUT7kkgz8_v1AELFr7IjxgR0n8uPc70d=m37",label:"1080p",type: "video/mp4",default: true},{file:"https://lh3.googleusercontent.com/2r6pa0DPRIoIiMFwmCqUFGUUcY07xLZIP33Gm_npGYDRIUT7kkgz8_v1AELFr7IjxgR0n8uPc70d=m22",label:"720p",type: "video/mp4",default: true},{file:"https://lh3.googleusercontent.com/2r6pa0DPRIoIiMFwmCqUFGUUcY07xLZIP33Gm_npGYDRIUT7kkgz8_v1AELFr7IjxgR0n8uPc70d=m18",label:"360p",type: "video/mp4",default: true}],
+tracks: [{ 
+		    file: '', 
+		    label: 'Tieng Viet', 
+		    kind: 'captions',
+		    "default":true
+		  }],
+captions: {
+        color: '#ffff00',
+        fontSize: 20,
+        backgroundOpacity: 20
+    },
+
+});
+playerInstance.addButton(
+									//This portion is what designates the graphic used for the button
+									"http://webphim24h.rf.gd/jwplayer/cAHz5k9.png",
+									"Download Video",
+									function() {
+										//window.location.href = playerInstance.getPlaylistItem()['file'] + '&type=fullepisodes';
+										var kI = playerInstance.getPlaylistItem(),
+											kcQ = playerInstance.getCurrentQuality();
+										if(kcQ < 0) { kcQ =0;}
+										var kF = kI.sources[kcQ].file+"?itag="+kcQ+"&type=video/mp4&title=Google Video";
+										window.open(kF,'_blank');
+									},
+									"download"
+								);	
+
+</script>
+</body>
+</html>
+
